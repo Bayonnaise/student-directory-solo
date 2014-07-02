@@ -25,7 +25,7 @@ def student_to_csv(student)
 end
 
 def save(students)
-	CSV.open('../students.csv') do |dummy|
+	CSV.open('../students.csv', 'w') do |dummy|
 		students.each do |student|
 			dummy << student_to_csv(student)
 		end
@@ -33,7 +33,7 @@ def save(students)
 end
 
 def load_students
-	CSV.foreach('../students.csv') do |row|
+	CSV.foreach('../students.csv', 'r') do |row|
 		students << row
 	end
 end
@@ -70,7 +70,7 @@ def process(choice)
 		name = get_input("name")
 		cohort = get_input("cohort")
 		hobby = get_input("hobby")
-		add([name,cohort,hobby])
+		add({name: name, cohort: cohort, hobby: hobby})
 	when "2"
 		print_students
 	when "3"
@@ -82,3 +82,7 @@ def process(choice)
 	else
 	end
 end
+
+# loop do
+# 	run_interactive_menu
+# end

@@ -34,14 +34,14 @@ describe 'student directory' do
 			add(student)
 			dummy = double
 			expect(dummy).to receive(:<<).with(student_to_csv(student))
-			expect(CSV).to receive(:open).with('../students.csv').and_yield(dummy)
+			expect(CSV).to receive(:open).with('../students.csv', 'w').and_yield(dummy)
 			save(students)
 		end
 
 		it 'loads from a file' do
 			row = student
 			expect(students).to receive(:<<).with(row)
-			expect(CSV).to receive(:foreach).with('../students.csv').and_yield(student)
+			expect(CSV).to receive(:foreach).with('../students.csv', 'r').and_yield(student)
 			load_students
 		end
 	end
