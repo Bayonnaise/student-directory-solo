@@ -45,4 +45,10 @@ describe 'student directory' do
 			load_students
 		end
 	end
+
+	context 'when taking user input' do
+		it 'checks for a valid menu option' do
+			
+		end
+	end
 end
