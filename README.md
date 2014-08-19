@@ -1,5 +1,6 @@
-# Student Directory Solo
+Student Directory Solo
+==
 
+Objectives
 --
-
-This is a one-day solo attempt to code the full Student Directory project from scratch using TDD (and without referring back to code).
+A one-day solo attempt to code the full Student Directory project from scratch using TDD (and without referring back to code).
